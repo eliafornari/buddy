@@ -1,0 +1,60 @@
+<div class="reward" ng-controller="MailchimpSubscriptionCtrl">
+
+<iframe src="https://www.toneden.io/highly-suspect/post/highly-suspect-mcid/5fusor?embed=true" style="border-radius:3px" frameborder="0" height="605" width="400" ng-hide="mailchimp.result === 'error' || mailchimp.result === 'success'"></iframe>
+<p class="home-hint" ng-hide="mailchimp.result === 'error' || mailchimp.result === 'success'" ng-if="!isMobile">( Click Above To Follow Highly Suspect On Spotify and Get Notified As Soon As New Music Is Available )</p>
+
+
+<table class="reward-table" ng-class="{'success': mailchimp.result}">
+  <tr>
+    <td>
+      <form class="reward-form" role="form" name="MailchimpSubscriptionForm" ng-class="{'shake': rewardIsWrong, 'success': mailchimp.result}" ng-init="mailchimp.result=false" novalidate>
+        <div ng-hide="mailchimp.result === 'success' || mailchimp.result === 'error'">
+          <input class="hidden" type="hidden" ng-model="mailchimp.username" ng-init="mailchimp.username='highlysuspect'">
+          <input class="hidden" type="hidden" ng-model="mailchimp.dc" ng-init="mailchimp.dc='us10'">
+          <input class="hidden" type="hidden" ng-model="mailchimp.u" ng-init="mailchimp.u='284191f9ffd1e7b6919297f55'">
+          <input class="hidden" type="hidden" ng-model="mailchimp.id" ng-init="mailchimp.id='c3b233a521'">
+
+          <div class="reward-form-input">
+            <input class="subscribe-form-control input" type="email" name="email" ng-model="mailchimp.EMAIL" placeholder="Email address" required>
+            <div class="line"></div>
+          </div>
+          <button class="button reward-button" type="submit" ng-click="addSubscription(mailchimp)">SUBSCRIBE</button>
+    <!-- ng-class="{'invalid': mailchimp.$invalid}" ng-disabled="MailchimpSubscriptionForm.$invalid" -->
+     <!-- ng-disabled="MailchimpSubscriptionForm.$invalid" -->
+        </div>
+
+        <div ng-show="mailchimp.result === 'success'" class="reward-form-success">
+          <p>
+            complete!</br>
+            you will receive a preview of the song.
+          </p>
+
+        </div>
+
+        <div class="reward-form-success" ng-show="mailchimp.result === 'error'">
+          <p>
+            {{mailchimp.errorMessage}}
+          </p>
+        </div>
+
+      </form>
+
+      <p class="home-hint reward-hint" ng-hide="mailchimp.result === 'error' || mailchimp.result === 'success'">( Fill in  Above To Subscribe to Highly Suspect's Newsletter and Get Notified As Soon As New Music Is Available )</p>
+
+    </td>
+  </tr>
+</table>
+
+
+  <div class="reward-social" ng-show="mailchimp.result === 'success'">
+    <table>
+      <tr>
+        <td>
+          <social-directive></social-directive>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+</div>

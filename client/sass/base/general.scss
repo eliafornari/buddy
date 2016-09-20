@@ -1,0 +1,190 @@
+/*....................................General settings..................................*/
+
+
+
+
+/*.....................TEXT MARK STYLES......................*/
+
+::-moz-selection {
+    background: transparent;
+    text-shadow: none;
+}
+
+
+::selection {
+    background: transparent;
+    text-shadow: none;
+}
+
+
+
+a:active{
+
+}
+
+.ng-click-active{
+
+}
+
+
+/*.....................ACTIVE CLASSES......................*/
+
+.active{
+  opacity:0.1;
+}
+
+
+
+
+
+/*....................HIDING SCROLLBAR.....................*/
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+
+
+*{
+  -webkit-overflow-scrolling: touch;
+}
+
+
+
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+
+
+/*.....................GENERAL STYLES......................*/
+
+html{
+  font-family: helvetica;
+  width: 100%;
+  margin: 0, 0;
+  padding: 0, 0;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0, 0;
+  padding: 0, 0;
+  display: table;
+  background-color: #000000;
+}
+
+
+p, a, li {
+  font-size: $font-size-p;
+  list-style-type: none;
+  letter-spacing:$letter-spacing;
+  color: #FFFFFF;
+  font-family: helvetica;
+}
+
+
+input, textarea, select, a, li {
+  text-decoration: none;
+}
+
+a{
+  font-family: helvetica;
+  cursor:pointer;
+}
+
+p{
+  @include paragraph();
+}
+
+h1{
+  @include h1();
+}
+
+h2{
+  @include h2();
+}
+
+
+
+
+
+/*.........................MAIN............................*/
+main {
+  height: auto;
+  position: relative;
+  display: block;
+  list-style-type: none;
+  display: table;
+}
+
+
+
+
+
+
+
+
+
+
+
+table{
+  width: 100vw;
+  height: 100vh;
+  tr{
+    td{
+      vertical-align: middle;
+    }
+  }
+}
+
+
+
+
+
+.nav{
+  position: fixed;
+  width:auto;
+  left:50px;
+  top:$margin-sides;
+  z-index:$z-nav;
+  margin-top: -7px;
+  .nav-list{
+    display: inline-block;
+    a{
+      @include paragraph();
+      font-family: helvetica;
+      @include hover-effect-color(#FFFFFF,#1a1a1a);
+      display: block;
+      height:$line-height-p;
+    }
+  }
+
+}
+
+
+
+
+
+/*.............................NG-CLOAK............................*/
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+
+[ng-click],
+[data-ng-click],
+[x-ng-click] {
+  cursor: pointer;
+}
