@@ -145,9 +145,12 @@ $scope.isWrong = false;
 
 $rootScope.windowHeight= $window.innerHeight;
 $rootScope.half_windowHeight = $window.innerHeight/2;
+$rootScope.windowWidth= $window.innerWidth;
 jQuery($window).resize(function(){
+
   $rootScope.windowHeight = $window.innerHeight;
   $rootScope.half_windowHeight = $window.innerHeight/2;
+  $rootScope.windowWidth= $window.innerWidth;
   $scope.$apply();
 });
 
@@ -155,10 +158,6 @@ jQuery($window).resize(function(){
 
 
 
-$scope.$watch('scroll', function(newValue, oldValue) {
-
-
-}); //if desktop
 
 
 

@@ -509,6 +509,7 @@ $transition-slow: 1s;
   line-height: $line-height-h2;
   font-family: $font-family-h2;
   letter-spacing: $letter-spacing-h2;
+  font-weight:900;
   @include respond-to(phone){
     font-size: $font-size-h2-mobile;
     line-height: $line-height-h2-mobile;

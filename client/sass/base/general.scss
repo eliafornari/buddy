@@ -76,12 +76,14 @@ html{
 
 
 body {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   margin: 0, 0;
   padding: 0, 0;
-  display: table;
+  display: block;
   background-color: #000000;
+  position: relative;
+
 }
 
 
@@ -99,8 +101,10 @@ input, textarea, select, a, li {
 }
 
 a{
-  font-family: helvetica;
   cursor:pointer;
+  @include h2();
+  text-transform: uppercase;
+
 }
 
 p{
@@ -121,20 +125,39 @@ h2{
 
 /*.........................MAIN............................*/
 main {
-  height: auto;
+  height: 100vh;
+  width:200vw;
   position: relative;
   display: block;
   list-style-type: none;
-  display: table;
+  display: block;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 
 
-
-
-
-
-
+.home-video{
+  position: fixed;
+  z-index:0;
+  right:0;
+  top:0;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  .home-letmescroll{
+    width:100%;
+    height:100%;
+    position: absolute;
+    background-color: transparent;
+    z-index:8;
+  }
+  .home-video-iframe{
+    width:100%;
+    height:100%;
+  }
+}
 
 
 

@@ -111,12 +111,13 @@ html {
   background-color: transparent; }
 
 body {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   margin: 0, 0;
   padding: 0, 0;
-  display: table;
-  background-color: #000000; }
+  display: block;
+  background-color: #000000;
+  position: relative; }
 
 p, a, li {
   font-size: 14px;
@@ -129,8 +130,20 @@ input, textarea, select, a, li {
   text-decoration: none; }
 
 a {
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 30px;
   font-family: helvetica;
-  cursor: pointer; }
+  letter-spacing: 0px;
+  font-weight: 900;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/
+  text-transform: uppercase; }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    a {
+      font-size: 20px;
+      line-height: 30px; } }
 
 p {
   font-size: 14px;
@@ -159,10 +172,11 @@ h1 {
       font-size: 25px; } }
 
 h2 {
-  font-size: 23px;
+  font-size: 16px;
   line-height: 30px;
   font-family: helvetica;
-  letter-spacing: 3px;
+  letter-spacing: 0px;
+  font-weight: 900;
   /*  @if $media == large-desktop {
       @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
     }*/ }
@@ -173,11 +187,33 @@ h2 {
 
 /*.........................MAIN............................*/
 main {
-  height: auto;
+  height: 100vh;
+  width: 200vw;
   position: relative;
   display: block;
   list-style-type: none;
-  display: table; }
+  display: block;
+  overflow-x: scroll;
+  overflow-y: hidden; }
+
+.home-video {
+  position: fixed;
+  z-index: 0;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: black; }
+  .home-video .home-letmescroll {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: transparent;
+    z-index: 8; }
+  .home-video .home-video-iframe {
+    width: 100%;
+    height: 100%; }
 
 table {
   width: 100vw;
@@ -247,27 +283,17 @@ table {
   cursor: pointer; }
 
 .home {
-  width: 100vw;
+  width: 200vw;
   height: 100vh;
-  position: relative;
-  background-color: #000000; }
+  position: relative; }
 
 .home-image {
   width: 100vw;
   height: 100vh;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover; }
-
-.home-video {
-  position: absolute;
-  z-index: 9;
-  left: 200px;
-  top: 40%;
-  display: block;
-  width: 200px;
-  height: 150px;
-  background-color: black; }
+  background-size: cover;
+  position: relative; }
 
 .icon {
   display: block;
@@ -276,32 +302,82 @@ table {
   position: absolute; }
   .icon a {
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    letter-spacing: 4px;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .icon a {
+        font-size: 16px; } }
+
+.icon-a:hover {
+  display: inline-block;
+  -webkit-transform: scale(1, 2);
+  /* Safari and Chrome */
+  -moz-transform: scale(1, 2);
+  /* Firefox */
+  -ms-transform: scale(1, 2);
+  /* IE 9 */
+  -o-transform: scale(1, 2);
+  /* Opera */
+  transform: scale(1, 2);
+  /* W3C */ }
 
 .instagram {
-  left: 5%;
+  left: 15%;
   top: 5%; }
+
+.music {
+  right: 40%;
+  top: 40%;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .music {
+      right: 50%; } }
+
+.itunes {
+  right: 25%;
+  bottom: 25%; }
+
+.youtube {
+  left: 45%;
+  top: 6%; }
 
 .twitter {
-  left: 50%;
-  top: 5%; }
+  left: 10%;
+  top: 45%; }
 
-.soundcloud {
+.soundcloudicon {
   left: 45%;
-  top: 5%; }
+  top: 75%;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .soundcloudicon {
+      left: 15%; } }
 
 .facebook {
-  left: 5%;
-  bottom: 5%; }
+  left: 65%;
+  bottom: 5%;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .facebook {
+      bottom: 15%; } }
 
 .private {
   right: 5%;
   top: 5%; }
 
 .soundcloud-button {
-  position: absolute;
+  position: fixed;
   right: 25px;
-  bottom: 25px;
+  top: 25px;
   z-index: 10; }
 
 .soundcloud {
